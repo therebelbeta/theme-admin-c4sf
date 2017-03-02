@@ -18,6 +18,7 @@ function postProjectsSync (req, res) {
   var Users = req.models.Users
 
   Projects.fetchGithubRepos(res.locals.brigade, req.user, function (results) {
+    console.log('test')
     req.flash('success', { msg: 'Success! You have successfully synced projects from Github.' })
     res.redirect('/projects/manage')
   })
